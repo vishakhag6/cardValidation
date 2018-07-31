@@ -1,0 +1,81 @@
+.margin-reset {
+  margin: 0 !important
+}
+
+.margin-t0 {
+  margin-top: 0 !important
+}
+
+.margin-b0 {
+  margin-bottom: 0 !important
+}
+
+.margin-l0 {
+  margin-left: 0 !important
+}
+
+.margin-r0 {
+  margin-right: 0 !important
+}
+
+.margin-t24 {
+  margin-top: 24px !important
+}
+
+.margin-b24 {
+  margin-bottom: 24px !important
+}
+
+.margin-l24 {
+  margin-left: 24px !important
+}
+
+.margin-r24 {
+  margin-right: 24px !important
+}
+
+.padding-reset {
+    padding: 0 !important
+}
+
+.text-center {
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.min-height {
+    min-height: calc(100vh - 56px - 50px - 16.4px - 15px - 13px);
+}
+
+footer.page-footer {
+    margin: 0;
+}
+
+.deletedMsz {
+    padding: 24px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+/* card image list css */
+.card-img-list {
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+}
+
+.red-text {
+    font-size: 11px;
+}

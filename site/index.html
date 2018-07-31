@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="cardApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card Validation:Angular</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css">
+    <link rel="stylesheet" href="style.css">
+    <base href="/">
+</head>
+<body>
+
+<!-- header -->
+<header>
+    <div class="navbar-fixed">
+        <nav class="teal lighten-2">
+            <div class="nav-wrapper container">
+                <a href="/" class="brand-logo">Logo</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- View -->
+<div class="container">
+    <div ng-view></div>
+</div>
+
+<!-- footer -->
+<footer class="page-footer padding-reset">
+    <div class="footer-copyright teal lighten-2">
+        <div class="container">
+            &copy; 2018 Copyright
+        </div>
+    </div>
+</footer>
+
+<script src="/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+<script src="/node_modules/angular/angular.min.js" type="text/javascript"></script>
+<script src="/node_modules/angular-route/angular-route.js"></script>
+<script src="/node_modules/materialize-css/dist/js/materialize.js" type="text/javascript"></script>
+<script src="js/indexService.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>
