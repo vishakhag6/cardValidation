@@ -32,6 +32,7 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
         showDeleteBtn : true
 	};
 	
+	$scope.showErrorMessage = false;
 	$scope.showDeletedMsz = false;
 	$scope.indexVar = "";
 
@@ -74,8 +75,12 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
 	$scope.saveFunc = function(){
 		var	add = true;
 		for(var i = 0; i < $scope.cardArr.length; i++) {
-			if($scope.cardArr[i].id  == $scope.card.id) {
+			if($scope.cardArr[i].cardNumber == $scope.card.cardNumber) {
 				add = false;
+				$scope.showErrorMessage = true;
+				$timeout(function(){
+					$scope.showErrorMessage = false;
+				}, 2000);
 			}
 		}	
 		if(add == true ){
@@ -89,6 +94,8 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
 			$scope.card = {};
 			$scope.minlength = 0;	
 		}
+
+		$scope.card = {};
     };
 
 	// Delete functionality(On the basis of Modal)
@@ -108,7 +115,7 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
 			$scope.showDeletedMsz = true;
 			$timeout(function(){
 				$scope.showDeletedMsz = false;
-			}, 3000);
+			}, 2000);
 
 			instance.close();
 		};
@@ -117,7 +124,8 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
     // Edit functionality
     $scope.onEditFunc = function(card, index) {
 		document.querySelector("label").classList.add("active");
-        cardUpdate = angular.copy(card);
+		cardUpdate = angular.copy(card);
+
 		$scope.card = cardUpdate;
 		$scope.indexVar = index;
         $scope.booleanObj = {
@@ -132,11 +140,13 @@ app.controller('cardCtrl', ['$scope', 'cardService', '$timeout', function($scope
     // Update functionality
     $scope.updateFunc = function(card, index) {
 		document.querySelector("label").classList.remove("active");
-        $scope.cardArr = $cardService.update($scope.cardArr, card, index);
-        console.log(index);
+		$scope.cardArr = $cardService.update($scope.cardArr, card, index);
+		console.log($scope.indexVar);
+
 		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("cradArr", JSON.stringify($scope.cardArr));
+			localStorage.setItem("cardArr", JSON.stringify($scope.cardArr));
 		}
+
         $scope.card = {};
         $scope.booleanObj = {
             showSaveBtn : true,
